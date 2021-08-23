@@ -1,0 +1,9 @@
+{
+            total=total+s[i-1];
+            if(total>t[i]){
+                total=t[i];
+            }
+        }
+        printf("%d\n",total);
+    }
+}
