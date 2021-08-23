@@ -1,17 +1,102 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEC BLOG</title>
+    
+    <link rel="stylesheet" media="all" href="{% static 'css/ress.min.css' %}">
+    <link rel="stylesheet" media="all" href="{% static 'css/style.css' %}">
+    
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/style.js' %}"></script>
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png'%}">
+</head>
 
+<body>
 {% block content %}
-    <div class="container">
-        <a href="{% url 'create' %}" class="btn btn-primary">新規作成</a>
-        {% for blog in blog_list %}
-            <div class= "card">
-                <h5 class="card-header">{{ blog.category }}</h5>
-                <div class="card-body">
-                    <h5 class="card-title">{{ blog.title }}</h5>
-                    <h6 class="card-title">{{ blog.postdate }}</h6>
-                <a href="{% url 'detail' blog.pk %}" class="btn btn-primary">詳細へ</a>
+<header>    
+<div class="container">
+<div class="row">
+    <div class="col span-12">
+    <div class="head">
+        <h1><a href="{% url 'list' %}">TEC BLOG</a></h1>
+		<div class="telbox">Created by Tamaki Masaya</div>
+        </div>
+    </div></div>
+<div class="row">
+    <div class="col span-12">
+        <nav>
+            <div id="open"></div>
+            <div id="close"></div>   
+            <div id="navi">
+            <ul>
+            <li><a href="{% url 'list' %}">ホーム</a></li>
+            <li><a href="{% url 'create' %}">新規作成</a></li>
+            <li><a href="{% url 'get_info' %}">ブログ取得</a></li>
+            </ul>
                 </div>
-            </div>
-        {% endfor %}
+        </nav>
     </div>
-{% endblock content %}
+        </div>
+    </div>
+    </header>
+    <div class="mainimg">
+              <img src="{% static 'img/mainimg.jpg'%}" alt="メイン画像">
+        </div>
+    <main>
+<div class="container">
+<div class="row">
+    <div class="col span-8">
+    <div class="news">
+		<h2>ブログ一覧</h2>
+		<ul>
+        {% for blog in blog_list %}
+          <li>{{ blog.postdate }}　<a href="{% url 'detail' blog.pk %}" class="btn btn-primary">{{ blog.title }}</a></li>
+        {% endfor %}
+		    
+		</ul>	
+		</div>
+    </div>
+	<div class="col span-4">
+		<a href="{% url 'create' %}"><img src="{% static 'img/banner_create.jpg'%}" alt="新規作成" class="btn btn-primary"></a>
+	  <a href="{% url 'get_info' %}"><img src="{% static 'img/banner_getinfo.jpg'%}" alt="ブログ取得" class="btn btn-primary"></a>
+	</div>
+    </div>    
+        </div>
+    </main>
+    <footer>
+<div class="container">
+<div class="row">
+    <div class="col span-4">
+        <h5>Twitter</h5>
+        <a href="https://twitter.com/masaya_0716_"><p>ここをクリック</p></a>
+    </div>
+    <div class="col span-4">
+        <h5>Instagram</h5>
+        <a href="https://www.instagram.com/masaya_0716_"><p>ここをクリック</p></a>
+    </div>
+    <div class="col span-4">
+        <h5>Mail</h5>
+        <a href="mailto:j1721mct@gmail.com"><p>ここをクリック</p></a>
+    </div>
+        </div>
+</div>
+    </footer>
+    <div class="copyright">
+<div class="container">
+<div class="row">
+    <div class="col">
+    Copyright &copy 2020 Tamaki Masaya Ltd. All Rights Reserved.
+    
+    </div>    
+        </div>
+    </div>
+        </div>
+<p id="pagetop"><a href="#">TOP</a></p>   
+{% endblock content %} 
+</body>
+</html>
+

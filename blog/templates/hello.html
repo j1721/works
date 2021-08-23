@@ -1,13 +1,92 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
+    <title>TEC BLOG</title>
+    <link rel="stylesheet" media="all" href="{% static 'css/ress.min.css' %}">
+    <link rel="stylesheet" media="all" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/style.js' %}"></script>
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png'%}">
 </head>
 <body>
-    <h1>message</h1>
-    <p>{{message}}</p>
+<header>    
+<div class="container">
+<div class="row">
+    <div class="col span-12">
+    <div class="head">
+        <h1><a href="index.html">TEC BLOG</a></h1>
+		<div class="telbox">Created by Tamaki Masaya</div>
+        </div>
+    </div></div>
+<div class="row">
+    <div class="col span-12">
+        <nav>
+            <div id="open"></div>
+            <div id="close"></div>   
+            <div id="navi">
+
+                </div>
+        </nav>
+    </div>
+        </div>
+    </div>
+    </header>
+    <div class="mainimg">
+              <img src="{% static 'img/mainimg.jpg'%}" alt="メイン画像">
+        </div>
+    <main>
+<div class="container">
+<div class="row">
+    <div class="col span-8">
+    <div class="news">
+		<h2>ブログ一覧</h2>
+		<ul>
+		    <li>20XX.1.1　ここに新着情報のテキストが入ります</li>
+		    <li>20XX.1.1　ここに新着情報のテキストが入ります</li>
+		    <li>20XX.1.1　ここに新着情報のテキストが入ります</li>
+		    <li>20XX.1.1　ここに新着情報のテキストが入ります</li>
+		</ul>	
+		</div>
+    </div>
+	<div class="col span-4">
+		<a href=""><img src="{% static 'img/banner_create.jpg'%}" alt="新規作成"></a>
+	        <a href=""><img src="{% static 'img/banner_getinfo.jpg'%}" alt="ブログ取得"></a>
+	</div>
+    </div>    
+        </div>
+    </main>
+    <footer>
+<div class="container">
+<div class="row">
+    <div class="col span-4">
+        <h5>Twitter</h5>
+        <a href="https://twitter.com/masaya_0716_"><p>ここをクリック</p>
+    </div>
+    <div class="col span-4">
+        <h5>Instagram</h5>
+        <a href="https://www.instagram.com/masaya_0716_"><p>ここをクリック</p></a>
+    </div>
+    <div class="col span-4">
+        <h5>Mail</h5>
+        <a href="mailto:j1721mct@gmail.com"><p>ここをクリック</p></a>
+    </div>
+        </div>
+</div>
+    </footer>
+    <div class="copyright">
+<div class="container">
+<div class="row">
+    <div class="col">
+    Copyright c 2020 Tamaki Masaya Inc. All Rights Reserved.
+    
+    </div>    
+        </div>
+    </div>
+        </div>
+<p id="pagetop"><a href="#">TOP</a></p>    
 </body>
 </html>
